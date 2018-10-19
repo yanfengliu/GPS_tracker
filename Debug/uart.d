@@ -14,6 +14,11 @@ uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/machine/_t
 uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/machine/_stdint.h
 uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/sys/_stdint.h
 uart.obj: ../uart.h
+uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/stdio.h
+uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/_ti_config.h
+uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/linkage.h
+uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/stdarg.h
+uart.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/string.h
 
 ../uart.c: 
 C:/ti/ccsv8/ccs_base/msp430/include/msp430.h: 
@@ -29,3 +34,8 @@ C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/machine/_types.h:
 C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/machine/_stdint.h: 
 C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/sys/_stdint.h: 
 ../uart.h: 
+C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/stdio.h: 
+C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/_ti_config.h: 
+C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/linkage.h: 
+C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/stdarg.h: 
+C:/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/string.h: 

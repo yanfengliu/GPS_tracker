@@ -12,12 +12,11 @@ void main(void) {
     NRF_init();
     UART_init();
     volatile uint16_t i;
+    uint8_t val = 0x55;
     while(1){
-        data[0] = UART_read();
+//        fputs("Hello, world!");
+//        data[0] = UART_read();
         NRF_transmit(data, len);
-//        UART_write(0x55);
-//        for (i=0; i<254; i++){
-//
-//        }
+//        UART_write(val);
     }
 }
