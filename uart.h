@@ -10,3 +10,4 @@
 
 void UART_init();
 uint8_t UART_read();
+void UART_write(uint8_t val);

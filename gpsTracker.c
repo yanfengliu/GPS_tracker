@@ -1,6 +1,7 @@
 #include <msp430.h>
 #include "spi.h"
 #include "nrf.h"
+#include "uart.h"
 
 void main(void) {
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
@@ -9,12 +10,14 @@ void main(void) {
     uint8_t data[] = {0x55};
     uint8_t len = 1;
     NRF_init();
-    volatile uint8_t i;
+    UART_init();
+    volatile uint16_t i;
     while(1){
-        // data[0] = UART_read();
+        data[0] = UART_read();
         NRF_transmit(data, len);
-        for (i=0; i<10000; i++){
-
-        }
+//        UART_write(0x55);
+//        for (i=0; i<254; i++){
+//
+//        }
     }
 }
