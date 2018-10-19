@@ -1,10 +1,10 @@
 ******************************************************************************
-                  MSP430 Linker PC v18.1.3                     
+                  MSP430 Linker PC v18.1.2                     
 ******************************************************************************
->> Linked Thu Oct 18 17:28:12 2018
+>> Linked Thu Oct 18 22:25:29 2018
 
 OUTPUT FILE NAME:   <GPS_tracker.out>
-ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c67c
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c648
 
 
 MEMORY CONFIGURATION
@@ -16,7 +16,7 @@ MEMORY CONFIGURATION
   PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
   INFOA                 00001800   00000200  00000000  00000200  RWIX
   RAM                   00002000   00001000  000000a0  00000f60  RWIX
-  FRAM                  0000c400   00003b80  000002cc  000038b4  RWIX
+  FRAM                  0000c400   00003b80  00000298  000038e8  RWIX
   JTAGSIGNATURE         0000ff80   00000004  00000004  00000000  RWIX  ffff 
   BSLSIGNATURE          0000ff84   00000004  00000004  00000000  RWIX  ffff 
   INT00                 0000ff88   00000002  00000000  00000002  RWIX
@@ -111,25 +111,24 @@ section   page    origin      length       input sections
                   0000c407    00000001     --HOLE-- [fill = 0]
                   0000c408    00000001     gpsTracker.obj (.const:.string:$P$T0$1)
 
-.text      0    0000c40a    000002c2     
-                  0000c40a    000000f0     nrf.obj (.text:NRF_init)
-                  0000c4fa    00000058     nrf.obj (.text:NRF_transmit)
-                  0000c552    00000052     nrf.obj (.text:writeRegisterArray)
-                  0000c5a4    0000002a     spi.obj (.text:SPI_init)
-                  0000c5ce    00000028     gpsTracker.obj (.text:main)
-                  0000c5f6    00000028     nrf.obj (.text:writeRegister)
-                  0000c61e    00000026     nrf.obj (.text:readRegister)
-                  0000c644    00000020     spi.obj (.text:SPI_transfer)
-                  0000c664    00000018     nrf.obj (.text:sendCommandNoValue)
-                  0000c67c    00000014     rts430x_lc_sd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
-                  0000c690    00000012                            : memcpy.c.obj (.text:memcpy)
-                  0000c6a2    00000008                            : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
-                  0000c6aa    00000006     spi.obj (.text:SPI_csHigh)
-                  0000c6b0    00000006     spi.obj (.text:SPI_csLow)
-                  0000c6b6    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
-                  0000c6bc    00000006     nrf.obj (.text:ceHigh)
-                  0000c6c2    00000006     nrf.obj (.text:ceLow)
-                  0000c6c8    00000004     rts430x_lc_sd_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+.text      0    0000c40a    0000028e     
+                  0000c40a    000000e2     nrf.obj (.text:NRF_init)
+                  0000c4ec    00000058     nrf.obj (.text:NRF_transmit)
+                  0000c544    00000052     nrf.obj (.text:writeRegisterArray)
+                  0000c596    0000002a     spi.obj (.text:SPI_init)
+                  0000c5c0    00000028     gpsTracker.obj (.text:main)
+                  0000c5e8    00000028     nrf.obj (.text:writeRegister)
+                  0000c610    00000020     spi.obj (.text:SPI_transfer)
+                  0000c630    00000018     nrf.obj (.text:sendCommandNoValue)
+                  0000c648    00000014     rts430x_lc_sd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
+                  0000c65c    00000012                            : memcpy.c.obj (.text:memcpy)
+                  0000c66e    00000008                            : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000c676    00000006     spi.obj (.text:SPI_csHigh)
+                  0000c67c    00000006     spi.obj (.text:SPI_csLow)
+                  0000c682    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
+                  0000c688    00000006     nrf.obj (.text:ceHigh)
+                  0000c68e    00000006     nrf.obj (.text:ceLow)
+                  0000c694    00000004     rts430x_lc_sd_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
 
 .stack     0    00002f60    000000a0     UNINITIALIZED
                   00002f60    00000002     rts430x_lc_sd_eabi.lib : boot.c.obj (.stack)
@@ -211,13 +210,13 @@ MODULE SUMMARY
        Module             code   ro data   rw data
        ------             ----   -------   -------
     .\
-       nrf.obj            524    6         0      
+       nrf.obj            472    6         0      
        spi.obj            86     0         0      
        gpsTracker.obj     40     1         0      
     +--+------------------+------+---------+---------+
-       Total:             650    7         0      
+       Total:             598    7         0      
                                                   
-    C:\ti\ccsv8\tools\compiler\ti-cgt-msp430_18.1.3.LTS\lib\rts430x_lc_sd_eabi.lib
+    C:\ti\ccsv8\tools\compiler\ti-cgt-msp430_18.1.2.LTS\lib\rts430x_lc_sd_eabi.lib
        boot.c.obj         20     2         0      
        memcpy.c.obj       18     0         0      
        isr_trap.asm.obj   8      0         0      
@@ -246,7 +245,7 @@ MODULE SUMMARY
                                                   
        Stack:             0      0         160    
     +--+------------------+------+---------+---------+
-       Grand Total:       706    45        160    
+       Grand Total:       654    45        160    
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -331,7 +330,7 @@ address   name
 00000672  BAKMEM9               
 00000673  BAKMEM9_H             
 00000672  BAKMEM9_L             
-0000c6b6  C$$EXIT               
+0000c682  C$$EXIT               
 000001c0  CRCDI                 
 000001c2  CRCDIRB               
 000001c3  CRCDIRB_H             
@@ -420,7 +419,7 @@ address   name
 000004c1  MPY_H                 
 000004c0  MPY_L                 
 0000c40a  NRF_init              
-0000c4fa  NRF_transmit          
+0000c4ec  NRF_transmit          
 000004c8  OP2                   
 000004e2  OP2H                  
 000004e3  OP2H_H                
@@ -534,10 +533,10 @@ address   name
 00000104  SFRRPCR               
 00000105  SFRRPCR_H             
 00000104  SFRRPCR_L             
-0000c6aa  SPI_csHigh            
-0000c6b0  SPI_csLow             
-0000c5a4  SPI_init              
-0000c644  SPI_transfer          
+0000c676  SPI_csHigh            
+0000c67c  SPI_csLow             
+0000c596  SPI_init              
+0000c610  SPI_transfer          
 000004ce  SUMEXT                
 000004cf  SUMEXT_H              
 000004ce  SUMEXT_L              
@@ -733,7 +732,7 @@ address   name
 000001cc  WDTCTL_L              
 00003000  __STACK_END           
 000000a0  __STACK_SIZE          
-0000c6a2  __TI_ISR_TRAP         
+0000c66e  __TI_ISR_TRAP         
 0000ffda  __TI_int41            
 0000ffdc  __TI_int42            
 0000ffde  __TI_int43            
@@ -756,13 +755,13 @@ ffffffff  __TI_pprof_out_hndl
 ffffffff  __TI_prof_data_size   
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
-0000c67c  _c_int00_noinit_noargs
+0000c648  _c_int00_noinit_noargs
 0000fffe  _reset_vector         
 00002f60  _stack                
-0000c6c8  _system_pre_init      
-0000c6b6  abort                 
-0000c5ce  main                  
-0000c690  memcpy                
+0000c694  _system_pre_init      
+0000c682  abort                 
+0000c5c0  main                  
+0000c65c  memcpy                
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -1244,18 +1243,18 @@ address   name
 00002f60  _stack                
 00003000  __STACK_END           
 0000c40a  NRF_init              
-0000c4fa  NRF_transmit          
-0000c5a4  SPI_init              
-0000c5ce  main                  
-0000c644  SPI_transfer          
-0000c67c  _c_int00_noinit_noargs
-0000c690  memcpy                
-0000c6a2  __TI_ISR_TRAP         
-0000c6aa  SPI_csHigh            
-0000c6b0  SPI_csLow             
-0000c6b6  C$$EXIT               
-0000c6b6  abort                 
-0000c6c8  _system_pre_init      
+0000c4ec  NRF_transmit          
+0000c596  SPI_init              
+0000c5c0  main                  
+0000c610  SPI_transfer          
+0000c648  _c_int00_noinit_noargs
+0000c65c  memcpy                
+0000c66e  __TI_ISR_TRAP         
+0000c676  SPI_csHigh            
+0000c67c  SPI_csLow             
+0000c682  C$$EXIT               
+0000c682  abort                 
+0000c694  _system_pre_init      
 0000ffda  __TI_int41            
 0000ffdc  __TI_int42            
 0000ffde  __TI_int43            
