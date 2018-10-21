@@ -48,7 +48,6 @@ uint8_t UART_read()
     {
 
     }
-    uint16_t full_val = UCA1RXBUF & 0xFFFF;
     uint8_t val = UCA1RXBUF & 0x00FF;
     return val;
 }

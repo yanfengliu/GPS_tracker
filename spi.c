@@ -30,7 +30,7 @@ uint8_t SPI_transfer(uint8_t value)
 {
     // write to USCI_A transmit buffer and start transmitting
     UCA0TXBUF = value;
-    while(UCA0IV & USCI_SPI_UCTXIFG == 0){
+    while(UCB0STATW & UCBUSY == UCBUSY){
         // wait for UCTXIFG to be set, which means the transmitter is ready
         // for the next byte. Data written to UCxTXBUF when UCTXIFG = 0 may
         // result in erroneous data transmission.
