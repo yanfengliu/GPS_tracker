@@ -1,5 +1,6 @@
 # GPS_tracker
 Project 1 for Advanced Embedded System class at University of Nebraska-Lincoln
+Special thanks to [Jay Carlson](https://github.com/jaydcarlson), my instructor and mentor for this awesome class! 
 
 Parts:
 * MSP430FR2433 microcontroller
