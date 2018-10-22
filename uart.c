@@ -14,17 +14,11 @@ void UART_init()
 {
     __enable_interrupt();
     UCA1CTLW0 = UCSWRST; // reset USCI_A
-//    UCA1CTLW0 = 0b0010000010000001;
     UCA1CTLW0 = UCSSEL__SMCLK | UCSWRST; // no parity; MSB first; 8-bit; 1 stop bit; UART; async; SMCLK;
     UCA1BRW = 0x0006; // UCBR = 6
-    UCA1MCTLW = 0x2080 | UCOS16; // UCBRF = 9; UCBRS = 0x20, UCOS16 = true (16x oversampling)
-
-
+    UCA1MCTLW = 0x2080 | UCOS16; // UCBRF = 8; UCBRS = 0x20, UCOS16 = true (16x oversampling)
     P2SEL1 = 0x00;
     P2SEL0 = BIT5 | BIT6; // activate P2.5, 2.6 primary function
-//    P2DIR &= ~BIT5; // set P2.5 as input
-//    P2DIR |= BIT6; // set P2.6 as output
-//    P2OUT &= 0x00; // clear outputs
     UCA1CTLW0 &= ~UCSWRST; // clear the bit to start UART
 }
 
@@ -44,11 +38,12 @@ int fputs(const char *_ptr, register FILE *_fp)
 
 uint8_t UART_read()
 {
-    while(UCA1IFG & UCRXIFG == 0)
+    while(!(UCA1IFG & UCRXIFG))
     {
 
     }
     uint8_t val = UCA1RXBUF & 0x00FF;
+    UCA1IFG &= ~UCRXIFG; // clear flag
     return val;
 }
 

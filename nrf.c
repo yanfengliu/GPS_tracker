@@ -109,7 +109,7 @@ void NRF_init()
     writeRegister(RF_SETUP, 0b00100110);            // 256 kbps data rate
     writeRegisterArray(RX_ADDR_P0, RX_address, 3);  // RX address on pipe 0 = 0xC2C20B
     writeRegisterArray(TX_ADDR, TX_address, 3);     // TX address = 0xC2C20B
-    writeRegister(FEATURE, 0b00000110);             // enable dynamic payload length; enable payload with ACK
+    writeRegister(FEATURE, 0b00000100);             // enable dynamic payload length; enable payload with ACK
     writeRegister(DYNPD, 0x01);                     // enable dynamic payload length data pipe 0; requires EN_DPL and ENAA first
     writeRegister(STATUS, 0b01111110);              // write 1 to MAX_RT to clear it
     // pick P1.0 as CE
@@ -144,9 +144,7 @@ void NRF_transmit(uint8_t data[], uint8_t len)
     // ce pulse for ~10us
     ceHigh();
     ceLow();
-    while (readRegister(STATUS) & 0b00100000 == 0){
-        // wait for ACK
-    }
+    for (i = 0; i < 254; i++){}
 }
 
 //// ACK interrupt from NRF to MCU GPIO
