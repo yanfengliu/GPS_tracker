@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.3                     
 ******************************************************************************
->> Linked Mon Oct 22 00:22:42 2018
+>> Linked Mon Oct 22 14:41:08 2018
 
 OUTPUT FILE NAME:   <GPS_tracker.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c706

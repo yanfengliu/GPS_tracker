@@ -144,6 +144,7 @@ void NRF_transmit(uint8_t data[], uint8_t len)
     // ce pulse for ~10us
     ceHigh();
     ceLow();
+
     for (i = 0; i < 254; i++){}
 }
 
