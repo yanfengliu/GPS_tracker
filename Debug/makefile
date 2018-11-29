@@ -11,7 +11,9 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./gpsTracker.obj" \
+"./lpm.obj" \
 "./nrf.obj" \
+"./rtc.obj" \
 "./spi.obj" \
 "./uart.obj" \
 "../lnk_msp430fr2433.cmd" \
@@ -158,8 +160,8 @@ GPS_tracker.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "gpsTracker.obj" "nrf.obj" "spi.obj" "uart.obj" 
-	-$(RM) "gpsTracker.d" "nrf.d" "spi.d" "uart.d" 
+	-$(RM) "gpsTracker.obj" "lpm.obj" "nrf.obj" "rtc.obj" "spi.obj" "uart.obj" 
+	-$(RM) "gpsTracker.d" "lpm.d" "nrf.d" "rtc.d" "spi.d" "uart.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -10,37 +10,49 @@ CMD_SRCS += \
 
 C_SRCS += \
 ../gpsTracker.c \
+../lpm.c \
 ../nrf.c \
+../rtc.c \
 ../spi.c \
 ../uart.c 
 
 C_DEPS += \
 ./gpsTracker.d \
+./lpm.d \
 ./nrf.d \
+./rtc.d \
 ./spi.d \
 ./uart.d 
 
 OBJS += \
 ./gpsTracker.obj \
+./lpm.obj \
 ./nrf.obj \
+./rtc.obj \
 ./spi.obj \
 ./uart.obj 
 
 OBJS__QUOTED += \
 "gpsTracker.obj" \
+"lpm.obj" \
 "nrf.obj" \
+"rtc.obj" \
 "spi.obj" \
 "uart.obj" 
 
 C_DEPS__QUOTED += \
 "gpsTracker.d" \
+"lpm.d" \
 "nrf.d" \
+"rtc.d" \
 "spi.d" \
 "uart.d" 
 
 C_SRCS__QUOTED += \
 "../gpsTracker.c" \
+"../lpm.c" \
 "../nrf.c" \
+"../rtc.c" \
 "../spi.c" \
 "../uart.c" 
 
