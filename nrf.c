@@ -115,14 +115,6 @@ void NRF_init()
     // pick P1.0 as CE
     P1DIR |= BIT0;                                  // set P1.0 as output
     ceLow();
-    // initialization for ACK interrupt
-//    P1DIR &= (~BIT7);                               // Set P1.7 SEL as Input
-//    P1IES |= (BIT7);                                // Falling Edge 1 -> 0
-//    P1IFG &= (~BIT7);                               // Clear interrupt flag for P1.7
-//    P1IE |= BIT7;                                   // enable interrupt
-//    P1REN |= BIT7;                                  // enable resistor
-//    P1OUT |= BIT7;                                  // make resistor pull-up
-//    __enable_interrupt();
 }
 
 void NRF_transmit(uint8_t data[], uint8_t len)
@@ -147,12 +139,3 @@ void NRF_transmit(uint8_t data[], uint8_t len)
 
     for (i = 0; i < 254; i++){}
 }
-
-//// ACK interrupt from NRF to MCU GPIO
-//#pragma vector=PORT1_VECTOR
-//__interrupt void Port_1(void)
-//{
-//    P1IFG &= (~BIT7); // P1.7 IFG clear
-//    // read the status register of the NRF
-//    // clear interrupt flags on the NRF
-//}
